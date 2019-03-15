@@ -30,7 +30,9 @@ public class Vertex<T> {
      * @return this
      */
     public void addNeighbor(T v) {
-        this.neighbors.push(v);
+        if(!this.neighbors.contains(v)) {
+            this.neighbors.push(v);
+        }
     }
 
     /**
@@ -60,5 +62,13 @@ public class Vertex<T> {
 
     public static <type> Vertex createFrom(Object e) {
         return new Vertex<type>((type) e);
+    }
+
+    public void showNeighbors() {
+        System.out.print("[");
+        for (T i: this.neighbors){
+            System.out.print(", " + i);
+        }
+        System.out.println("]");
     }
 }

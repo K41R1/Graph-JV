@@ -20,7 +20,7 @@ public class GraphAdjacencyList<T> {
         this.adjacencyList.push(new Vertex<T>(v));
         return this;
     }
-
+    
     public int getEdges() {
         return 0;
     }
@@ -85,7 +85,7 @@ public class GraphAdjacencyList<T> {
      * @param u
      * @param v
      * @param temp
-     * @return
+     * @return boolean
      */
     private boolean pathExistsUtil(T u, T v, LinkedList<Vertex> temp) {
         int x1 = this.findVertexIndexByValue(u);
@@ -102,7 +102,7 @@ public class GraphAdjacencyList<T> {
 
     /**
      * @param v
-     * @return
+     * @return int
      */
     private int findVertexIndexByValue(T v) {
         for (int it = 0; it < this.adjacencyList.size(); it++) {
@@ -126,5 +126,11 @@ public class GraphAdjacencyList<T> {
             return v1.getNeighbors().contains(v);
         }
         return false;
+    }
+
+    public void showNeighbors(T i) {
+        int x1 = this.findVertexIndexByValue(i);
+        this.adjacencyList.get(x1).showNeighbors();
+
     }
 }
