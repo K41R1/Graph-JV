@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<graph type="int">
+    <vertex>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </vertex>
+    <edges>
+        <edge src="0" dest="1" />
+        <edge src="0" dest="3" />
+        <edge src="1" dest="4" />
+        <edge src="3" dest="2" />
+    </edges>
+</graph>

@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.util.LinkedList;
 
 public class GraphAdjacencyList<T> {
@@ -54,7 +55,7 @@ public class GraphAdjacencyList<T> {
     public void addEdge(T u, T v) {
         int x1 = this.findVertexIndexByValue(u);
         int x2 = this.findVertexIndexByValue(v);
-        if ((x1 != -1) && (x2 != -1)) {
+        if ((x1 != -1) & (x2 != -1)) {
             this.adjacencyList.get(x1).addNeighbor(v);
             this.adjacencyList.get(x2).addNeighbor(u);
         }

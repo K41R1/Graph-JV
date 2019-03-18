@@ -27,10 +27,10 @@ public class Vertex<T> {
 
     /**
      * @param v
-     * @return this
+     * @return void
      */
     public void addNeighbor(T v) {
-        if(!this.neighbors.contains(v)) {
+        if(!this.isNeighbor(v)) {
             this.neighbors.push(v);
         }
     }
@@ -47,7 +47,7 @@ public class Vertex<T> {
      * @param v
      */
     public Vertex<T> removeNeighbor(T v) {
-        if (this.neighbors.contains(v)) {
+        if (this.isNeighbor(v)) {
             this.neighbors.remove(v);
         }
         return this;
@@ -60,9 +60,9 @@ public class Vertex<T> {
         return !this.neighbors.isEmpty();
     }
 
-    public static <type> Vertex createFrom(Object e) {
+    /*public static <type> Vertex createFrom(Object e) {
         return new Vertex<type>((type) e);
-    }
+    }*/
 
     public void showNeighbors() {
         System.out.print("[");
