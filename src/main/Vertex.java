@@ -1,3 +1,5 @@
+package main;
+
 import java.util.LinkedList;
 
 public class Vertex<T> {
@@ -60,8 +62,8 @@ public class Vertex<T> {
         return !this.neighbors.isEmpty();
     }
 
-    /*public static <type> Vertex createFrom(Object e) {
-        return new Vertex<type>((type) e);
+    /*public static <type> main.Vertex createFrom(Object e) {
+        return new main.Vertex<type>((type) e);
     }*/
 
     public void showNeighbors() {

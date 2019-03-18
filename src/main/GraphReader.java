@@ -1,5 +1,6 @@
-import org.xml.sax.SAXException;
+package main;
 
+import org.xml.sax.SAXException;
 import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;

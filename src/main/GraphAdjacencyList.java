@@ -1,4 +1,5 @@
-import java.awt.*;
+package main;
+
 import java.util.LinkedList;
 
 public class GraphAdjacencyList<T> {
@@ -13,7 +14,7 @@ public class GraphAdjacencyList<T> {
     }
 
     /**
-     * Add new Vertex
+     * Add new main.Vertex
      * @param v
      * @return this
      */
