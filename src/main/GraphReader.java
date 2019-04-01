@@ -25,8 +25,7 @@ public class GraphReader {
     public static GraphReader buildFrom(String file) throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
-        File xmlDoc = new File(file);
-        return new GraphReader(builder.parse(xmlDoc));
+        return new GraphReader(builder.parse(new File(file)));
     }
 
     public String getType() {
