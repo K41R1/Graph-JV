@@ -1,6 +1,7 @@
 package main;
 
 import java.util.LinkedList;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class Vertex<T> {
 
@@ -62,15 +63,27 @@ public class Vertex<T> {
         return !this.neighbors.isEmpty();
     }
 
-    /*public static <type> main.Vertex createFrom(Object e) {
-        return new main.Vertex<type>((type) e);
-    }*/
+    /**
+     *
+     * @param n
+     * @return boolean
+     */
+    public boolean hasNeighbor(T n) {
+        AtomicBoolean exist = new AtomicBoolean(false);
+        this.neighbors.stream().forEach(w -> {
+            if (w.equals(n)) exist.set(true);
+        });
+        return exist.get();
+    }
 
+    /**
+     * Show all neighbors
+     */
     public void showNeighbors() {
         System.out.print("[");
-        for (T i: this.neighbors){
-            System.out.print(", " + i);
-        }
+        this.neighbors.stream().forEach(e -> {
+            System.out.print(", " + e);
+        });
         System.out.println("]");
     }
 }
