@@ -133,6 +133,5 @@ public class GraphAdjacencyList<T> {
     public void showNeighbors(T i) {
         int x1 = this.findVertexIndexByValue(i);
         this.adjacencyList.get(x1).showNeighbors();
-
     }
 }

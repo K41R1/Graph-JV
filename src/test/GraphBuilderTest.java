@@ -42,7 +42,8 @@ class GraphBuilderTest {
         GraphBuilder.build(gr.getType(), gr.getNumVertices());
         GraphBuilder.buildVertices(gr.getVertex());
         GraphBuilder.buildEdges(gr.getEdges());
-        assertNotNull(GraphBuilder.buildGraph());
+        GraphAdjacencyList g = GraphBuilder.buildGraph();
+        assertNotNull(g);
         assertTrue(GraphBuilder.buildGraph().directPathExist(0,3));
         assertTrue(GraphBuilder.buildGraph().directPathExist(1,4));
     }

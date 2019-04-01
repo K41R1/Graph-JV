@@ -9,7 +9,8 @@ public class GraphBuilder {
 
     public static void buildVertices(NodeList vertexList) {
         for (int i = 0; i < vertexList.getLength(); i++) {
-            graphAdjacencyList.addVertex(vertexList.item(i).getTextContent());
+            Object item = parseTo(vertexList.item(i).getTextContent());
+            graphAdjacencyList.addVertex(item);
         }
     }
 
@@ -47,10 +48,11 @@ public class GraphBuilder {
     public static void buildEdges(NodeList edgesList) {
         for (int i = 0; i < edgesList.getLength(); i++) {
             Element edge = (org.w3c.dom.Element) edgesList.item(i);
-            graphAdjacencyList.addEdge(
-                    parseTo(edge.getAttribute("src")),
-                    parseTo(edge.getAttribute("dest"))
-            );
+            Object u,v;
+            u = parseTo(edge.getAttribute("src"));
+            v = parseTo(edge.getAttribute("dest"));
+
+            graphAdjacencyList.addEdge(u, v);
         }
     }
 
