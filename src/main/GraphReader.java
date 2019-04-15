@@ -20,8 +20,6 @@ public class GraphReader {
         this.root = graphXmlFile.getDocumentElement();
     }
 
-
-
     public static GraphReader buildFrom(String file) throws ParserConfigurationException, IOException, SAXException {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
